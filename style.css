@@ -1,0 +1,103 @@
+html {
+  color-scheme: dark;
+}
+
+body {
+  color: #eee;
+  font-size: 1.125rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: min(900px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+table {
+  width: 100%;
+  /* Get rid of all the borders */
+  border-collapse: collapse;
+  background: #323232;
+}
+
+caption,
+th,
+td {
+  padding: 1rem;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+caption {
+  background: hsl(0, 0%, 0%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+th {
+  background: hsl(0, 0%, 0%, 0.5);
+}
+
+tr:nth-last-of-type(2n) {
+  background: hsl(0, 0%, 0%, 0.1);
+}
+
+/* Scroll bar appears when screen gets small */
+/* .table-container {
+  max-width: 100%;
+  overflow-x: auto;
+} */
+
+@media (max-width: 40em) {
+  th {
+    display: none;
+  }
+
+  td {
+    /* ALTERNATIVES */
+    /* display: block; */
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 15ch auto;
+    padding: 0.7rem 1rem;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-top: 2rem;
+  }
+
+  td::before {
+    content: attr(data-cell) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  /* ALTERNATIVES */
+  /* td:nth-last-of-type(1)::before {
+    content: "name";
+  }
+   td:nth-last-of-type(2)::before {
+    content: "poles";
+  }
+  td:nth-last-of-type(3)::before {
+    content: "podiums";
+  }
+  td:nth-last-of-type(4)::before {
+    content: "wins";
+  }
+  td:nth-last-of-type(5)::before {
+    content: "career points";
+  }
+  td:nth-last-of-type(6)::before {
+    content: "championship";
+  } */
+}
